@@ -48,16 +48,20 @@ print(round(1 / 3, 4))
 # réponse 2.2
 number = 2
 number = float(number)
+print(type(number))
 print(number)
 
 number_float1 = 1.62
-number_float = int(number_float1)
+number_float1 = int(number_float1)
+print(type(number_float1))
 print(number_float1)
 
 number_float2 = 1.62
 number_float2 = round(number_float2, 0)
+print(type(number_float2))
 print(number_float2)
 
 number_float3 = 1.62
 number_float3 = round(number_float3, 1)
+print(type(number_float3))
 print(number_float3)
