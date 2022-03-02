@@ -65,3 +65,38 @@ number = 42
 #number = number + 1
 n = 1
 number += n
+
+# == != < > <= >=
+a = 123
+b = 42
+
+# Egal
+result = a == b
+print(result)
+
+# Different
+result = a != b
+print(result)
+
+# Inférieur ou égal
+result = a <= b
+print(result)
+
+# == fait office de comparaison d'identité
+a = "123"
+b = 123
+
+result = a == b
+
+# pas en python
+# === !==
+
+fruits = ["apple", "banana", "cherry"]
+result = "banana" in fruits
+print(result)
+
+result = "orange" in fruits
+print(result)
+
+result = type(123) is float
+print(result)
