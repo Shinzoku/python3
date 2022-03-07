@@ -87,7 +87,7 @@ number = random.randint(0, 99)
 print(number)
 
 # réponse 4.5
-if number >= 0 and number <= 49:
+if 0 <= number <= 49:
     print("le nombre est compris entre 0 et 49 inclus")
 
 else:
@@ -104,10 +104,10 @@ number = random.randint(0, 99)
 print(number)
 
 # réponse 4.6
-if number >= 0 and number <= 33:
+if 0 <= number <= 33:
     print("le nombre est compris entre 0 et 33 inclus")
 
-elif number >= 34 and number <= 66:
+elif 34 <= number <= 66:
     print("le nombre est compris entre 34 et 66 inclus")
 
 else:
