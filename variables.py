@@ -144,3 +144,37 @@ print(my_var)
 my_var = None
 my_var = bool(my_var)
 print(my_var)
+
+n = 34.14
+n = bool(int(n))
+print(n)
+
+# swap (inverser les valeurs)
+a = 42
+b = 123
+
+# Méthode classique
+x = a
+a = b
+b = x
+
+# Méthode arithmétique
+# a = a + b
+# b = a - b
+# a = a - b
+
+# Destructured assignment
+# Python, Js, Mais pas PHP
+# a, b = b, a
+
+if a == 123 and b == 42:
+    print("Vous avez réussi à inverser les valeurs des variables")
+
+# arrondi
+import decimal
+from decimal import Decimal
+
+decimal.getcontext().rounding = decimal.ROUND_HALF_UP
+
+print(Decimal("0.5").quantize(Decimal("1"))) # Decimal('1')
+print(Decimal("1.5").quantize(Decimal("1"))) # Decimal('2')
