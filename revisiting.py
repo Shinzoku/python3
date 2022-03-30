@@ -86,3 +86,21 @@ if random.randint(0, 9) < 5:
 
 while random.randint(0, 9) < 5 :
     print("foo")
+
+# ou
+
+while True:
+    # Avec une condition d'arrêt
+    if random.randint(0, 9) < 5:
+        print("foo")
+    else:
+        break
+
+# ou
+# Méthode avec tirage avant la boucle
+n = random.randint(0, 9)
+
+# Avec une condition de continuation
+while n < 5:
+    print("foo")
+    n = random.randint(0, 9)
