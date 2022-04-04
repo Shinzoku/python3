@@ -176,3 +176,14 @@ print(my_list)
 
 my_list.insert(0, "mémé")
 print(my_list)
+
+# concaténation de liste
+
+liste_a = ["a", "b", "c"]
+liste_b = [1, 2, 3]
+liste_c = liste_a + liste_b
+print(liste_c)
+
+# fusion de listes (modification de l'originale)
+liste_a.extend(liste_b)
+print(liste_a)
