@@ -64,37 +64,11 @@ print(f"firstname: {user4._firstname}, lastname: {user4._lastname}, email: {user
 
 # réponse 12.3
 
-users = [
-    {
-        'firstname': 'Joe',
-        'lastname': 'Dalton',
-        'email': 'joe.dalton@example.com',
-        'newsletter': True
-    },
-    {
-        'firstname': 'William',
-        'lastname': 'Dalton',
-        'email': 'william.dalton@example.com',
-        'newsletter': False
-    },
-    {
-        'firstname': 'Jack',
-        'lastname': 'Dalton',
-        'email': 'jack.dalton@example.com',
-        'newsletter': False
-    },
-    {
-        'firstname': 'Avrel',
-        'lastname': 'Dalton',
-        'email': 'avrel.dalton@example.com',
-        'newsletter': True
-    }
-]
+users = [user1, user2, user3, user4]
 
 for user in users:
-    if user['newsletter'] == True:
-        for key, value in user.items():
-            print(f"{key}: {value}")
+    if user._newsletter == True:
+            print(f"{user._firstname} {user._lastname}: {user._email}")
 
 # exo 12.4
 # Créez une classe nommée `ProductLorem` qui possède les attributs suivants :
