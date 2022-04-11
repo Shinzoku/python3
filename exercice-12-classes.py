@@ -13,13 +13,12 @@
 # réponse 12.1
 from re import T
 
-
 class User:
     def __init__(self, firstname = '', lastname = '', email = '', newsletter = False):
-        self.firstname = firstname
-        self.lastname = lastname
-        self.email = email
-        self.newsletter = newsletter
+        self._firstname = firstname
+        self._lastname = lastname
+        self._email = email
+        self._newsletter = newsletter
 
 # et la méthod
 # exo 12.2
@@ -46,23 +45,25 @@ class User:
 #   - newsletter: true
 
 # réponse 12.2
+
 user1 = User('Joe', 'Dalton', 'joe.dalton@example.com', True)
-print(f"firstname: {user1.firstname}, lastname: {user1.lastname}, email: {user1.email}, newsletter: {user1.newsletter}")
+print(f"firstname: {user1._firstname}, lastname: {user1._lastname}, email: {user1._email}, newsletter: {user1._newsletter}")
 
 user2 = User('William', 'Dalton', 'william.dalton@example.com', False)
-print(f"firstname: {user2.firstname}, lastname: {user2.lastname}, email: {user2.email}, newsletter: {user2.newsletter}")
+print(f"firstname: {user2._firstname}, lastname: {user2._lastname}, email: {user2._email}, newsletter: {user2._newsletter}")
 
 user3 = User('Jack', 'Dalton', 'jack.dalton@example.com', False)
-print(f"firstname: {user3.firstname}, lastname: {user3.lastname}, email: {user3.email}, newsletter: {user3.newsletter}")
+print(f"firstname: {user3._firstname}, lastname: {user3._lastname}, email: {user3._email}, newsletter: {user3._newsletter}")
 
 user4 = User('Avrel', 'Dalton', 'avrel.dalton@example.com', True)
-print(f"firstname: {user4.firstname}, lastname: {user4.lastname}, email: {user4.email}, newsletter: {user4.newsletter}")
+print(f"firstname: {user4._firstname}, lastname: {user4._lastname}, email: {user4._email}, newsletter: {user4._newsletter}")
 
 # exo 12.3
 # Ajoutez chacune des instances de la classe `User` à une liste nommée `users`
 # Utilisez une boucle `for` (type `foreach`) pour afficher le nom complet et l'email de chaque utilisateur s'il est abonné à la newsletter (c-à-d si newsletter == True)
 
 # réponse 12.3
+
 users = [
     {
         'firstname': 'Joe',
@@ -107,22 +108,23 @@ for user in users:
 # - set_price() : détermine le prix du produit
 
 # réponse 12.4
+
 class ProductLorem:
     def __init__(self, name = '', price = 0.0):
-        self.name = name
-        self.price = price
+        self._name = name
+        self._price = price
 
     def get_name(self):
-        return self.name
+        return self._name
 
     def set_name(self, name):
-        self.name = name
+        self._name = name
 
     def get_price(self):
-        return self.price
+        return self._price
 
     def set_price(self, price):
-        self.price = price
+        self._price = price
 
 # exo 12.5
 # Créez 3 instances de la classe `ProductLorem` et affectez les valeurs suivantes à ses attributs en utilisant les setters :
@@ -137,6 +139,7 @@ class ProductLorem:
 #   - price: 16,18
 
 # réponse 12.5
+
 product1 = ProductLorem()
 product1.set_name("Foo")
 product1.set_price(31.41)
@@ -149,14 +152,14 @@ product3 = ProductLorem()
 product3.set_name("Baz")
 product3.set_price(16.18)
 
-print(product1.name)
-print(product1.price)
+print(product1.get_name())
+print(product1.get_price())
 
-print(product2.name)
-print(product2.price)
+print(product2.get_name())
+print(product2.get_price())
 
-print(product3.name)
-print(product3.price)
+print(product3.get_name())
+print(product3.get_price())
 
 # for prod in product1:
 #     for value in prod.values():
@@ -172,13 +175,13 @@ print(product3.price)
 products = [product1, product2, product3]
 
 for product in products:
-        print(product.name)
-        print(product.price)
+        print(product.get_name())
+        print(product.get_price())
 
 
 somme = 0
 for product in products:
-    somme += product.price
+    somme += product.get_price()
     somme = round(somme, 2)
 
 print(somme)
@@ -203,27 +206,27 @@ print(somme)
 class ProductIpsum:
     
     def __init__(self, name, price = 0.0, tax = 0.0):
-        self.name = name
-        self.price = price
-        self.tax = tax
+        self._name = name
+        self._price = price
+        self._tax = tax
 
     def get_name(self):
-        return self.name
+        return self._name
 
     def set_name(self, name):
-        self.name = name
+        self._name = name
 
     def get_price(self):
-        return self.price
+        return self._price
 
     def set_price(self, price):
-        self.price = price
+        self._price = price
 
     def get_tax(self):
-        return self.tax
+        return self._tax
     
     def set_tax(self, tax):
-        self.tax = tax
+        self._tax = tax
 
     def get_tax_fee(self):
         return self.get_price() * self.get_tax() / 100
@@ -267,7 +270,7 @@ product3 = ProductIpsum("Amet", 16.18, 5.5)
 products = [product1, product2, product3]
 
 for product in products:
-    print(f'Nom du produit: {product.name}, le prix hors taxe: {product.price}€, la taxe: {product.tax}%, le prix ttc: {product.get_tax_included_price()}€')
+    print(f'Nom du produit: {product.get_name()}, le prix hors taxe: {product.get_price()}€, la taxe: {product.get_tax()}%, le prix ttc: {product.get_tax_included_price()}€')
 
 spht = product1.get_price() + product2.get_price() + product3.get_price()
 st = product1.get_tax_fee() + product2.get_tax_fee() + product3.get_tax_fee()
