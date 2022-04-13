@@ -11,7 +11,6 @@
 # Pas la peine de créer de getters et de setters
 
 # réponse 12.1
-from re import T
 
 class User:
     def __init__(self, firstname = '', lastname = '', email = '', newsletter = False):
