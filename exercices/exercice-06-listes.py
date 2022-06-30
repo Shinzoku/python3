@@ -31,7 +31,7 @@ print(my_list)
 my_list = ['foo', 'bar', 'baz', 'lorem', 'ipsum']
 
 # réponse 6.4
-del(my_list[1])
+del my_list[1]
 print(my_list)
 
 # exo 6.5
@@ -67,50 +67,62 @@ print(my_list)
 my_list = [2.71, 42]
 
 # réponse 6.8
-print(my_list[0] + my_list[1])
+somme = 0
+for i in my_list:
+    somme += i
+print(somme)
 
 # exo 6.9
 # Calculez la somme des nombres de la liste et affichez le résultat
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.9
-print(sum(my_list))
+somme = 0
+for i in my_list:
+    somme += i
+print(somme)
 
 # exo 6.10
 # Calculez la moyenne des nombres de la liste et affichez le résultat
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.10
-print(sum(my_list)/len(my_list))
+somme = 0
+for i in my_list:
+    somme += i
+    moyen = somme / len(my_list)
+print(moyen)
+
 
 # exo 6.11
 # Trouvez l'index de la valeur `3.14` dans la liste et affichez le résultat
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.11
-indx = my_list.index(3.14)
-print(indx)
+val_cible = 3.14
+for i in range(len(my_list)):
+    if my_list[i] == val_cible:
+        position = i
+print(position)
 
 # exo 6.12
 # Comptez les nombres plus petits ou égaux à 10 dans la liste et affichez le résultat
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.12
+count = 0
 for l in my_list:
-    if l < 10:
-        print(l)
+    if l <= 10:
+        count += 1
+print(count)
 
 # exo 6.13
 # Multipliez chacun des nombres dans la liste par 100, réaffactez le résultat à la place de la valeur originelle puis affichez le résultat
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.13
-my_list[0] = my_list[0] * 100
-my_list[1] = my_list[1] * 100
-my_list[2] = my_list[2] * 100
-my_list[3] = my_list[3] * 100
-my_list[4] = my_list[4] * 100
-my_list[5] = my_list[5] * 100
+for i in range(len(my_list)):
+    my_list[i] = my_list[i] * 100
 print(my_list)
 
 # exo 6.14
@@ -119,9 +131,9 @@ my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.14
 my_list2 = []
-my_list2.append(my_list[1])
-my_list2.append(my_list[2])
-my_list2.append(my_list[3])
+for i in range(len(my_list)):
+    if my_list[i] == int(my_list[i]):
+        my_list2.append(my_list[i])
 print(my_list2)
 
 # exo 6.15
@@ -136,36 +148,16 @@ print(my_list2)
 my_list = [2.71, 42, 123, 2, 3.14, 1.61]
 
 # réponse 6.15
-tmp = my_list[0]
-my_list[0] = my_list[1]
-my_list[1] = tmp
-
-tmp = my_list[2]
-my_list[2] = my_list[3]
-my_list[3] = tmp
-
-tmp = my_list[4]
-my_list[4] = my_list[5]
-my_list[5] = tmp
+for i in range(0, len(my_list), 2):
+    if i+1 < len(my_list):
+        tmp = my_list[i]
+        my_list[i] = my_list[i+1]
+        my_list[i+1] = tmp
 
 print(my_list)
 
 # exo 6.16
-# Triez la liste en utilisant l'algorithme du tri bulle puis affichez la liste
-my_list = [2.71, 42, 123, 2, 3.14, 1.61]
-
-# réponse 6.16
-def tri_bulle(list):
-    l = len(list)
-    for i in range(l):
-        for j in range(0, l-i-1):
-            if list[j] > list[j+1] :
-                list[j], list[j+1] = list[j+1], list[j]
-
-tri_bulle(my_list)
-
-for i in range(len(my_list)):
-    print(my_list[i])
+# Exo supprimé
 
 # code 6.1
 # Lire la valeur de la ligne `m` et de la colonne `n` d'un tableau en 2 dimensions
@@ -194,6 +186,7 @@ print(matrix)
 
 # réponse 6.17
 print(matrix[2][3])
+
 # code 6.2
 # Pour afficher toutes les combinaisons possibles de deux nombres de 0 à n inclus vous pouvez utiliser deux boucles `for` imbriquées
 #

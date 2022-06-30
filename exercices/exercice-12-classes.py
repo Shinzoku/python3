@@ -19,7 +19,6 @@ class User:
         self._email = email
         self._newsletter = newsletter
 
-# et la méthod
 # exo 12.2
 # Créez 4 instances de la classe `User` et affectez les valeurs suivantes à ses attributs :
 # - user1
@@ -134,11 +133,6 @@ print(product2.get_price())
 print(product3.get_name())
 print(product3.get_price())
 
-# for prod in product1:
-#     for value in prod.values():
-        # set_name(value[0])
-        # set_price(value[1])
-
 # exo 12.6
 # Ajoutez chacune des instances de la classe `ProductLorem` à une liste nommée `products`
 # Utilisez une boucle `for` (type `foreach`) pour afficher le nom et le prix de chaque produit
@@ -155,7 +149,8 @@ for product in products:
 somme = 0
 for product in products:
     somme += product.get_price()
-    somme = round(somme, 2)
+
+somme = round(somme, 2)
 
 print(somme)
 
@@ -241,18 +236,20 @@ product3 = ProductIpsum("Amet", 16.18, 5.5)
 
 # réponse 12.9
 products = [product1, product2, product3]
+spht = 0
+st = 0
+spttc = 0
 
 for product in products:
     print(f'Nom du produit: {product.get_name()}, le prix hors taxe: {product.get_price()}€, la taxe: {product.get_tax()}%, le prix ttc: {product.get_tax_included_price()}€')
-
-spht = product1.get_price() + product2.get_price() + product3.get_price()
-st = product1.get_tax_fee() + product2.get_tax_fee() + product3.get_tax_fee()
-spttc = product1.get_tax_included_price() + product2.get_tax_included_price() + product3.get_tax_included_price()
+    spht += product.get_price()
+    st += product.get_tax_fee()
+    spttc += product.get_tax_included_price()
 
 spht = round(spht, 2)
 st = round(st, 2)
 spttc = round(spttc, 2)
 
-print(f'Total des prix Hors Taxe: {spht}€')
-print(f'Total des Taxes produits: {st}€')
-print(f'Total des prix Hors Taxe: {spttc }€')
+print(f'Total des prix Hors Taxe: {spht} €')
+print(f'Total des Taxes produits: {st} €')
+print(f'Total des prix TTC: {spttc} €')

@@ -74,6 +74,7 @@ b = 1.73
 
 resultat = is_greater(a, b)
 print(resultat)
+
 # exo 10.5
 # Créer une fonction nommée `compare()` qui :
 # - prend deux paramètres `a` et `b` de type `float`
@@ -96,6 +97,7 @@ b = 1.71
 
 resultat = compare(a, b)
 print(resultat)
+
 # exo 10.6
 # La formule suivante permet de convertir des mètres en miles :
 #
@@ -145,7 +147,7 @@ print(str(resut_meters) + " meters")
 # réponse 10.7
 def compute_tax(price: float, tax_type: int):
     if tax_type == 1:
-        return price * (1 + (2 / 100))
+        return price * (1 + (2,1 / 100))
     elif tax_type == 2:
         return price * (1 + (5.5 / 100))
     elif tax_type == 3:

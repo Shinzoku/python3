@@ -108,8 +108,8 @@ my_dict = {
 }
 
 # réponse 9.8
-for key, value in my_dict.items():
-    print(value)
+for key in my_dict:
+    print(my_dict[key])
 
 # exo 9.9
 # En utilisant une boucle `for` et sans utiliser la méthode `items()`, affichez les clés et les valeurs qui se trouvent dans le dictionnaire
@@ -127,10 +127,7 @@ my_dict = {
 
 # réponse 9.9
 for key in my_dict:
-    print(f"clé: " + str(key))
-
-for value in my_dict.values():
-    print(f"valeur: " + str(value))
+    print(f"clé: {key} => valeur: {my_dict[key]}")
 
 # exo 9.10
 # En utilisant une boucle `for` et la méthode `items()`, affichez les clés et les valeurs qui se trouvent dans le dictionnaire
@@ -148,4 +145,4 @@ my_dict = {
 
 # réponse 9.10
 for key, value in my_dict.items():
-    print(f"clé: " + str(key) + " => valeur: " + str(value))
+    print(f"clé: {key} => valeur: {value}")

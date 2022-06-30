@@ -6,6 +6,8 @@ import random
 # en utilisant une boucle for, affichez les nombre de 0 à 99 inclus
 
 # réponse 7.1
+for i in range(0, 100):
+    print(i)
 
 # exo 7.2
 # en utilisant une boucle for, affichez les nombre de 0 à 100 inclus
@@ -23,7 +25,7 @@ number = random.randint(1, 10)
 # affichez `r` s'il est égal à 1
 
 # réponse 7.3
-for i in range(1, 101):
+for i in range(0, 100):
     r = random.randint(1, 10)
     if r == 1:
         print(r)
@@ -33,7 +35,7 @@ for i in range(1, 101):
 # affichez `r` s'il est plus petit ou égal à 5
 
 # réponse 7.4
-for i in range(1, 51):
+for i in range(0, 50):
     r = random.randint(1, 10)
     if r <= 5:
         print(r)
@@ -43,7 +45,7 @@ for i in range(1, 51):
 # affichez `r` s'il est plus grand ou égal à 6
 
 # réponse 7.5
-for i in range(1, 21):
+for i in range(0, 20):
     r = random.randint(1, 10)
     if r >= 6:
         print(r)
@@ -53,7 +55,7 @@ for i in range(1, 21):
 # affichez `r` s'il est égal à 1 ou égal à 10
 
 # réponse 7.6
-for i in range(1, 101):
+for i in range(0, 100):
     r = random.randint(1, 10)
     if r == 1 or r == 10:
         print(r)
@@ -63,7 +65,7 @@ for i in range(1, 101):
 # affichez `r` s'il est compris entre 3 et 8 inclus
 
 # réponse 7.7
-for i in range(1, 11):
+for i in range(0, 10):
     r = random.randint(1, 10)
     if 3 <= r <= 8:
         print(r)
@@ -75,7 +77,7 @@ for i in range(1, 11):
 
 # réponse 7.8
 count = 0
-for i in range(1, 51):
+for i in range(0, 50):
     r = random.randint(1, 10)
     if r == 7:
         count += 1
@@ -88,7 +90,7 @@ print(count)
 
 # réponse 7.9
 count = 0
-for i in range(1, 11):
+for i in range(0, 10):
     r = random.randint(1, 10)
     if r <= 4:
         count += 1
@@ -101,7 +103,7 @@ print(count)
 
 # réponse 7.10
 count = 0
-for i in range(1, 34):
+for i in range(0, 33):
     r = random.randint(1, 10)
     if r >= 7:
         count += 1
@@ -114,9 +116,9 @@ print(count)
 
 # réponse 7.11
 count = 0
-for i in range(1, 67):
+for i in range(0, 66):
     r = random.randint(1, 10)
-    if r <= 2 or r == 9:
+    if r <= 2 or r >= 9:
         count += 1
 print(count)
 
@@ -127,7 +129,7 @@ print(count)
 
 # réponse 7.12
 count = 0
-for i in range(1, 101):
+for i in range(0, 100):
     r = random.randint(1, 10)
     if 2 <= r <= 9:
         count += 1
@@ -188,6 +190,7 @@ for i in range(1, 101):
 # boucler jusqu'à ce que la valeur 100 soit tirée au hasard
 
 # réponse 7.18
+r = 0
 while r != 100:
     r = random.randint(1, 100)
     print("valeur de r: " + str(r))

@@ -6,7 +6,7 @@
 # - le nombre d'or 1,61 à une variable
 # - votre nom et prénom à une variable
 # - la valeur booléenne vrai si nous sommes le matin, sinon la valeur booléenne faux, à une variable
-# - la valeur null `None` à une variable
+# - la valeur nulle `None` à une variable
 # Affichez ces variables
 
 # réponse 2.1
@@ -27,6 +27,7 @@ print(is_not_morning)
 
 get_number = None
 print(get_number)
+
 # code 2.1
 # la fonction `round()` permet d'arrondir un float en un integer
 # 0,1 est arrondi à la valeur inférieur
@@ -38,7 +39,7 @@ print(round(0.9))
 print(round(1 / 3, 4))
 
 # exo 2.2
-# Stockez le valeurs suivantes dans une variable et transtypez-les :
+# Stockez les valeurs suivantes dans une variable et transtypez-les :
 # - integer 2 en un float
 # - float 1,62 en un integer
 # - float 1,62 en un float arrondi à zéro chiffre après la virgule, puis en un integer
