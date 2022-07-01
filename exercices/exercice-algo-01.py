@@ -70,9 +70,9 @@ for l in range(len(list_fibonacci)):
 # utilisant un index et la fonction `range()`.
 
 # réponse 1.3
-def fibonacci_1_3(nbr):
-    if nbr == 0 or nbr == 1:
-        return nbr
+def fibonacci_1_3(n):
+    if n == 0 or n == 1:
+        return n
     else:
         return None
 
@@ -91,10 +91,10 @@ for i in range(3):
 # utilisant un index et la fonction `range()`.
 
 # réponse 1.4
-def fibonacci_1_4(nbr):
-    if nbr == 1 or nbr == 0:
-        return nbr
-    elif nbr == 2:
+def fibonacci_1_4(n):
+    if n == 1 or n == 0:
+        return n
+    elif n == 2:
         return fibonacci_1_4(0) + fibonacci_1_4(1)
     else:
         return None
@@ -106,7 +106,7 @@ for i in range(3):
 #
 # Reprenez votre fonction `fibonacci_1_4`, renommez-là `fibonacci_1_5`.
 # Puis modifiez-là de façon à ce que la somme de `fibonacci_1_4(0)` et
-# `fibonacci_1_4(1)` utilise la vraiable `n` au lieu de valeurs
+# `fibonacci_1_4(1)` utilise la variable `n` au lieu de valeurs
 # constantes.
 #
 # Appelez votre fonction dans une boucle qui va de `0` à `2` en
@@ -119,6 +119,14 @@ for i in range(3):
 # fonction `fibonacci_1_5()` et plus `fibonacci_1_4()`.
 
 # réponse 1.5
+def fibonacci_1_5(n):
+    if n == 1 or n == 0:
+        return n
+    else:
+        return fibonacci_1_5(n - 2) + fibonacci_1_5(n - 1)
+
+for i in range(3):
+    fibonacci_1_5(i)
 
 # exo 1.6
 #
@@ -130,6 +138,14 @@ for i in range(3):
 # utilisant un index et la fonction `range()`.
 
 # réponse 1.6
+def fibonacci_1_6(n):
+    if n == 1 or n == 0:
+        return n
+    else:
+        return fibonacci_1_6(n - 2) + fibonacci_1_6(n - 1)
+
+for i in range(0, 10):
+    fibonacci_1_6(i)
 
 # exo 1.7
 #
@@ -143,6 +159,11 @@ for i in range(3):
 # deux valeurs.
 
 # réponse 1.7
+for i in range(0, 10):
+    if fibonacci_1_6(i) != list_fibonacci[i]:
+        print("erreur: ", i, list_fibonacci[i], fibonacci_1_6(i))
+    else:
+        print("ok", i)
 
 # note 2.1
 #
@@ -150,7 +171,7 @@ for i in range(3):
 #
 # C'est un jeu connu chez les écoliers anglais pour apprendre les
 # nombres multiples de 3 ou de 5. Le principe est simple. Vous comptez
-# en commençant à 1. Dès que vous rencontrez un nombre umltiple de 3
+# en commençant à 1. Dès que vous rencontrez un nombre multiple de 3
 # vous dites "fizz" à la place. Dès que vous rencontrez un nombre
 # multiple de 5 vous dites "buzz" à la place. Et si vous rencontrez un
 # nombre multiple de 3 et de 5 à la fois, vous dites "fizz buzz" à la
@@ -169,4 +190,15 @@ for i in range(3):
 # Appelez la fonction `fizzbuzz_2_1()` avec la valeur `20`.
 
 # réponse 2.1
+def fizzbuzz_2_1(n):
+    for i in range(0, n):
+        if ((i + 1) % 3 == 0) and ((i + 1) % 5 == 0):
+            print("Fizz Buzz")
+        elif (i + 1) % 3 == 0:
+            print("Fizz")
+        elif (i + 1) % 5 == 0:
+            print("Buzz")
+        else:
+            print(i + 1)
 
+fizzbuzz_2_1(20)
